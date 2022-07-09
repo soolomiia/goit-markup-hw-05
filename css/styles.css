@@ -1,4 +1,6 @@
 /* main */
+
+
 :root {
     --primary-background-color: #ffffff;
     --secondary-background-color: #f5f4fa;
@@ -58,7 +60,11 @@ html {
   padding-top: 94px;
   padding-bottom: 94px;
 }
+
+
   /* header */
+
+
   header{
     border-bottom: 1px solid #ECECEC;
   }
@@ -111,6 +117,7 @@ html {
   line-height: 1.5;
   letter-spacing: 0.02em;
 	color: inherit;
+  position: relative;
   padding-top: 32px;
   padding-bottom: 32px;
   transition-property: color ;
@@ -120,6 +127,18 @@ html {
 .link-header:hover, 
 .link-header:focus {
   color: var(--accent);
+
+}
+.current::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent);
 
 }
 .list-contact{
@@ -135,7 +154,6 @@ html {
 .item-contact-first{
   margin-left: 0;
 }
-
 .link-contact{
   color:  var(--primary-text-color);
   line-height: 1.5;
@@ -180,7 +198,14 @@ html {
 .link-contact:focus {
   color: var(--accent);
 }
+
+
 /* studia */
+
+
+/*main-page*/
+
+
 .main-page {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/main1.jpg) ;
     height: 600px;
@@ -189,8 +214,6 @@ html {
     padding: 200px 0;
     margin: 0 auto;
     background-size: auto;
-
-
 }
 .main-title {
     font-weight: 900;
@@ -203,7 +226,6 @@ html {
     margin-left: auto;
     margin-right: auto;
     width: 696px;
- 
 }
 .support {
     background-color: var(--button-hover);
@@ -222,6 +244,10 @@ html {
     min-width: 13px;
 
 }
+
+
+/*fact-section*/
+
 
 .facts-list {
   list-style: none;
@@ -257,7 +283,6 @@ html {
 .facts-item:nth-child(4)::before{
   background-image: url(../images/astro.png);
 }
-
 .facts-title {
     font-size: 14px;
     line-height: 1.1;
@@ -270,6 +295,11 @@ html {
     color: var(--primary-text-color);
     margin: 0;
 }
+
+
+/*presentation-section*/
+
+
 .presentation{
   padding-top: 0;
   text-align: center;
@@ -298,6 +328,11 @@ html {
   margin-left: 30px;
   flex-basis: calc((100% - 60px) / 3);
 }
+
+
+/*team-section*/
+
+
 .team{
   text-align: center;
   align-items: center;
@@ -316,7 +351,6 @@ html {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-
 .team-card{
     list-style: none;
     background: var(--primary-background-color);
@@ -336,7 +370,6 @@ html {
     text-align: center;
     margin-bottom: 4px;
   }
-  
 .team-desc {
     font-size: 16px;
     line-height: 1.2;
@@ -387,6 +420,11 @@ html {
   .link-team-icon:focus{
     background-color: var(--accent);
   }
+
+
+  /*clients-section*/
+
+
 .list-clients{
   display: flex;
   align-items: center;
@@ -421,14 +459,12 @@ html {
   cursor: pointer;
   fill: var(--accent);
 }
-
 .link-clients:hover,
 .link-clients:focus
 {
   cursor: pointer;
   border: 1px solid var(--accent);
 }
-
 .icon-clients{
   height: 60px;
   width: 106px;
@@ -440,7 +476,10 @@ html {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
   /* footer */
+
+
   footer{
     background: var(--third-background-color);
     padding-top: 60px;
@@ -451,7 +490,6 @@ html {
   .footer-section{
     display: inline-flex;
   }
-
   .logo-studio-footer{
     color: var(--invert-text-color);
   }
@@ -539,13 +577,18 @@ html {
 .item-join-icon-first{
   margin-left: 0;
 }
-
 .link-join-icon:hover .media-icon-join,
 .link-join-icon:focus .media-icon-join{
   background-color: var(--accent);
 }
 
+
 /* portfolio */
+
+
+/*button-section*/
+
+
 .button-list{
   display: flex;
   align-items: center;
@@ -588,6 +631,10 @@ html {
     color: var(--invert-text-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+
+/*service-section*/
+
+
 .service{
   display: flex;
   flex-wrap: wrap;
@@ -609,6 +656,35 @@ html {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.image-overlay{
+  position: relative;
+  overflow: hidden;
+}
+.service-overlay{
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  background-color: rgba(33, 150, 243, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition-property: transform;
+  transition-duration: 250ms;
+}
+.service-overlay-text{
+  color: var(--invert-text-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+}
+
+.servise-card-button:hover .service-overlay,
+.servise-card-button:focus .service-overlay {
+  transform: translateY(0);
+}
+
 .servise-card-button:hover,
 .servise-card-button:focus {
  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -640,7 +716,10 @@ html {
   line-height: 1.9;
   margin: 0;
 }
+
+
 /*Modal*/
+
 
 .backdrop{
   position: fixed;
