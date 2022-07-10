@@ -328,7 +328,24 @@ html {
   margin-left: 30px;
   flex-basis: calc((100% - 60px) / 3);
 }
-
+.presentation-description{
+width: 100%;
+height: 70px;
+padding-top: 27px;
+background-color: rgba(47, 48, 58, 0.8);
+position: absolute;
+bottom: 0;
+left: 0;
+}
+.image-presentation-overlay{
+  position: relative;
+}
+.presentation-text{
+  font-weight: 700;
+  color: var(--invert-text-color);
+  line-height: 1.18;
+  text-transform: uppercase;
+}
 
 /*team-section*/
 
@@ -389,7 +406,7 @@ html {
     width: 20px;
     height: 20px;
     fill: #AFB1B8;
-    transition-property: fill, background-color ;
+    transition-property: fill ;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -413,7 +430,6 @@ html {
 }
   .link-team-icon:hover .media-icon-team,
   .link-team-icon:focus .media-icon-team{
-    background-color: var(--accent);
     fill: #FFFFFF;
   }
   .link-team-icon:hover,
@@ -471,7 +487,7 @@ html {
   padding: 0;
   fill: #AFB1B8;
   background-color: var(--primary-background-color);
-  transition-property: fill, background-color ;
+  transition-property: fill ;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -567,7 +583,7 @@ html {
   width: 20px;
   height: 20px;
   fill: #FFFFFF;
-  transition-property: fill, background-color ;
+  transition-property: background-color ;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -672,6 +688,7 @@ html {
   transform: translateY(100%);
   transition-property: transform;
   transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .service-overlay-text{
   color: var(--invert-text-color);
@@ -724,7 +741,8 @@ html {
 .backdrop{
   position: fixed;
   transition: opacity;
-  transition-duration: 2500ms;
+  visibility: visible;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   top: 0;
   left: 0;
